@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ToDoCRUDRestApi.DataContext;
 using ToDoCRUDRestApi.Interfaces;
@@ -11,6 +12,8 @@ namespace ToDoCRUDRestApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
+
     public class ToDoController : ControllerBase
     {
         private ToDoDataContext _context;
